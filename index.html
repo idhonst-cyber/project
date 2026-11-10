@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza Hut - Ultimate Review & Interactive Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+
+  <!-- Floating Background Glows -->
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+
+  <!-- Header / Navbar -->
+  <header>
+    <div class="logo">
+      <span class="logo-icon">🍕</span>
+      <span class="logo-text">PizzaHut<span class="highlight">Hub</span></span>
+    </div>
+    <nav>
+      <a href="#review">Review</a>
+      <a href="#calculator">Kalkulator</a>
+      <a href="#quiz">Kuis</a>
+      <a href="#rating">Ulasan</a>
+    </nav>
+    <button id="themeToggle" class="btn-theme-toggle" aria-label="Toggle Theme">
+      <span class="icon">🌙</span>
+      <span class="text">Dark Mode</span>
+    </button>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <span class="badge">Ulasan Jujur & Fitur Interaktif</span>
+    <h1>Pengalaman Kuliner <br><span class="gradient-text">Pizza Hut Indonesia</span></h1>
+    <p>Simak kelebihan, kekurangan, estimasi harga pesanan, hingga kuis pilihan menu favoritmu di satu tempat.</p>
+  </section>
+
+  <main class="container">
+    
+    <!-- Kelebihan & Kekurangan Section -->
+    <section id="review" class="section-block">
+      <div class="section-header">
+        <h2>Kelebihan & Kekurangan</h2>
+        <p>Analisis objektif sebelum kamu memesan makanan di Pizza Hut.</p>
+      </div>
+
+      <div class="grid-2">
+        <!-- Kelebihan -->
+        <div class="glass-card card-pro">
+          <div class="card-tag pro">Pros</div>
+          <h3>Kelebihan Utama</h3>
+          <ul class="styled-list">
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <strong>Variasi Pinggiran (Crust) Unik</strong>
+                <p>Pilihan Stuffed Crust Keju/Sosis dan Cheesebites yang ikonik dan gurih.</p>
+              </div>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <strong>Jaringan Restoran Luas</strong>
+                <p>Mudah ditemukan di mana saja dengan suasana <em>dine-in</em> yang nyaman.</p>
+              </div>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <strong>Pilihan Menu Sangat Bagus</strong>
+                <p>Tersedia variasi pasta, nasi, salad bar segar, hingga camilan penutup.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kekurangan -->
+        <div class="glass-card card-con">
+          <div class="card-tag con">Cons</div>
+          <h3>Kekurangan Utama</h3>
+          <ul class="styled-list">
+            <li>
+              <span class="cross">✕</span>
+              <div>
+                <strong>Harga Cukup Tinggi</strong>
+                <p>Harga normal tanpa paket promo terbilang cukup mahal dibanding kompetitor.</p>
+              </div>
+            </li>
+            <li>
+              <span class="cross">✕</span>
+              <div>
+                <strong>Adonan Cenderung Berminyak</strong>
+                <p>Tipe <em>Pan Pizza</em> terbilang tebal dan agak berminyak bagi beberapa orang.</p>
+              </div>
+            </li>
+            <li>
+              <span class="cross">✕</span>
+              <div>
+                <strong>Waktu Tunggu Saat Peak Hour</strong>
+                <p>Antrean dine-in atau takeaway bisa sangat lama di akhir pekan.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interaktif 1: Dark/Light Mode sudah di Header -->
+
+    <!-- Interaktif 2: Kalkulator Estimasi Harga -->
+    <section id="calculator" class="section-block">
+      <div class="glass-card interactive-card">
+        <div class="section-header align-left">
+          <span class="interactive-badge">Fitur Interaktif 1</span>
+          <h2>🧮 Kalkulator Estimasi Pesanan</h2>
+          <p>Hitung kisaran budget pesanan pizza favoritmu secara real-time.</p>
+        </div>
+
+        <div class="calculator-grid">
+          <div class="form-group">
+            <label for="size">Ukuran Pizza</label>
+            <select id="size">
+              <option value="50000">Personal (4 Slices) - Rp 50.000</option>
+              <option value="100000" selected>Regular (6 Slices) - Rp 100.000</option>
+              <option value="150000">Jumbo / Family (8 Slices) - Rp 150.000</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="crust">Pilihan Crust (Pinggiran)</label>
+            <select id="crust">
+              <option value="0">Original Crust (+ Rp 0)</option>
+              <option value="25000">Stuffed Crust Keju (+ Rp 25.000)</option>
+              <option value="30000">Cheesebites (+ Rp 30.000)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group custom-checkbox">
+          <input type="checkbox" id="extraCheese" value="15000">
+          <label for="extraCheese">
+            <span class="checkbox-box"></span>
+            Tambah Extra Cheese (+ Rp 15.000)
+          </label>
+        </div>
+
+        <div class="price-summary">
+          <span>Estimasi Total:</span>
+          <h3 id="totalPrice">Rp 100.000</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interaktif 3: Kuis Rekomendasi Menu -->
+    <section id="quiz" class="section-block">
+      <div class="glass-card interactive-card">
+        <div class="section-header align-left">
+          <span class="interactive-badge">Fitur Interaktif 2</span>
+          <h2>🎯 Kuis Rekomendasi Menu</h2>
+          <p>Beri tahu kami selera makanmu, kami pilihkan menu yang pas!</p>
+        </div>
+
+        <div class="quiz-grid">
+          <div class="form-group">
+            <label for="taste">Profil Rasa Favorit</label>
+            <select id="taste">
+              <option value="meat">Penuh Daging Sapi & Ayam (Savory)</option>
+              <option value="cheese">Keju Melimpah & Gurih (Cheesy)</option>
+              <option value="seafood">Seafood / Mayones Segar (Fresh)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="portion">Jumlah Orang</label>
+            <select id="portion">
+              <option value="solo">Makan Sendiri / Berdua</option>
+              <option value="group">Pesta / Rombongan (3+ Orang)</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="quizBtn" class="btn-action">Cari Rekomendasi Saya ✨</button>
+
+        <div id="quizResult" class="result-box hidden"></div>
+      </div>
+    </section>
+
+    <!-- Interaktif 4: Interactive Star Rating -->
+    <section id="rating" class="section-block">
+      <div class="glass-card interactive-card text-center">
+        <span class="interactive-badge">Fitur Interaktif 3</span>
+        <h2>⭐ Berikan Rating Versimu</h2>
+        <p>Berapa bintang untuk pengalaman makanmu di Pizza Hut?</p>
+
+        <div class="stars-container" id="starsContainer">
+          <span class="star" data-value="1">★</span>
+          <span class="star" data-value="2">★</span>
+          <span class="star" data-value="3">★</span>
+          <span class="star" data-value="4">★</span>
+          <span class="star" data-value="5">★</span>
+        </div>
+
+        <p id="ratingFeedback" class="rating-feedback">Klik bintang untuk memberi nilai</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 PizzaHut Review Hub • Didesain dengan Modern Glassmorphism & UI Estetik</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

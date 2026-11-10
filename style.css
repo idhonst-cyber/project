@@ -1,0 +1,433 @@
+/* --- Root Color Variables --- */
+:root {
+  --bg-gradient: linear-gradient(135deg, #fef2f2 0%, #fff7ed 100%);
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(255, 255, 255, 0.9);
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  
+  --primary: #dc2626;
+  --primary-hover: #b91c1c;
+  --accent: #f59e0b;
+  
+  --pro-color: #10b981;
+  --con-color: #ef4444;
+
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 25px -5px rgba(220, 38, 38, 0.1);
+}
+
+body.dark-mode {
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b1e 100%);
+  --card-bg: rgba(30, 41, 59, 0.85);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: background-color 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body {
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Header & Glass Nav */
+header {
+  position: sticky;
+  top: 10px;
+  width: 92%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: 50px;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.logo .highlight {
+  color: var(--primary);
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+.btn-theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 30px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 3rem 1rem 1.5rem 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.badge {
+  background: rgba(220, 38, 38, 0.1);
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #dc2626, #ea580c);
+  -webkit-background-clip: text;
+  background-clip: text; /* standard — required for Firefox & modern browsers */
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Container & Cards */
+.container {
+  max-width: 900px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.section-block {
+  margin-bottom: 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+.section-header.align-left {
+  text-align: left;
+}
+
+.section-header h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.grid-2, .calculator-grid, .quiz-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+/* Card Pros & Cons */
+.card-tag {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.card-tag.pro { background: rgba(16, 185, 129, 0.15); color: var(--pro-color); }
+.card-tag.con { background: rgba(239, 68, 68, 0.15); color: var(--con-color); }
+
+.styled-list {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.styled-list li {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.check, .cross {
+  font-weight: 800;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+}
+
+.check { color: var(--pro-color); background: rgba(16, 185, 129, 0.1); }
+.cross { color: var(--con-color); background: rgba(239, 68, 68, 0.1); }
+
+.styled-list p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* Form Interaktif */
+.interactive-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: rgba(220, 38, 38, 0.08);
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.form-group {
+  margin-bottom: 0.8rem;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--text-main);
+  font-size: 0.88rem;
+  outline: none;
+}
+
+.custom-checkbox input { display: none; }
+
+.custom-checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.checkbox-box {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 2px solid var(--text-muted);
+  display: inline-block;
+}
+
+.custom-checkbox input:checked + label .checkbox-box {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.price-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  background: rgba(220, 38, 38, 0.06);
+  border-radius: 12px;
+}
+
+.price-summary h3 {
+  font-size: 1.3rem;
+  color: var(--primary);
+}
+
+.btn-action {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #dc2626, #ea580c);
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.35);
+}
+
+.result-box {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Rating Stars */
+.stars-container {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 0.8rem 0;
+}
+
+.star {
+  font-size: 2rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.star:hover {
+  transform: scale(1.2);
+  color: var(--accent);
+}
+
+.star.active { color: var(--accent); }
+
+.rating-feedback {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.hidden { display: none; }
+
+footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* =================================================== */
+/* OPTIMASI KHUSUS TAMPILAN HP (MOBILE RESPONSIVE)      */
+/* =================================================== */
+@media (max-width: 640px) {
+  /* Header HP */
+  header {
+    width: 95%;
+    padding: 0.6rem 1rem;
+  }
+  
+  /* Sembunyikan menu navigasi teks di HP agar tidak sesak */
+  header nav {
+    display: none; 
+  }
+  
+  .btn-theme-toggle .text {
+    display: none; /* Hanya tampilkan ikon bulan/matahari di HP */
+  }
+
+  .btn-theme-toggle {
+    padding: 6px 10px;
+  }
+
+  /* Hero HP */
+  .hero {
+    padding-top: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .hero p {
+    font-size: 0.88rem;
+  }
+
+  /* Ubah semua grid 2 kolom menjadi 1 kolom ke bawah */
+  .grid-2, 
+  .calculator-grid, 
+  .quiz-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .glass-card {
+    padding: 1.2rem;
+    border-radius: 16px;
+  }
+
+  .price-summary {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .star {
+    font-size: 1.8rem;
+  }
+}
